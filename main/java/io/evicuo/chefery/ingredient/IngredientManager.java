@@ -17,12 +17,12 @@ public class IngredientManager {
     public IngredientManager(Chefery plugin) {
         this.plugin = plugin;
         loadIngredients();
+        ingredients = new ArrayList<>();
     }
 
     public void loadIngredients() {
         FileConfiguration config = Chefery.getInstance().ingredientsConfig.get();
         for(String key : config.getConfigurationSection("ingredients").getKeys(false)) {
-            String id = key;
             String name = config.getString("ingredients." + key + ".display_name");
             String materialName = config.getString("ingredients." + key + ".material");
             String category = config.getString("ingredients." + key + ".category");
@@ -32,7 +32,7 @@ public class IngredientManager {
 
             List<Attribute> attributes = plugin.attributeManager.getAttributeById(attributeNames);
 
-            Ingredient ingredient = new Ingredient(id, name, lore, category, attributes, materialName);
+            Ingredient ingredient = new Ingredient(key, name, lore, category, attributes, materialName);
             ingredients.add(ingredient);
         }
 
@@ -40,5 +40,14 @@ public class IngredientManager {
 
     public List<Ingredient> getIngredients() {
         return ingredients;
+    }
+
+    public Ingredient getIngredientById(String id) {
+        for(Ingredient ingredient : ingredients) {
+            if(ingredient.getId().equals(id)) {
+                return ingredient;
+            }
+        }
+        return null;
     }
 }

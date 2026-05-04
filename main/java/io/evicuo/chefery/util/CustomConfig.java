@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class CustomConfig {
-    private Chefery plugin;
+    private final Chefery plugin;
     private File file;
     private YamlConfiguration config;
     private final String dir;
@@ -52,5 +52,13 @@ public abstract class CustomConfig {
                 }
             }
         }.runTaskAsynchronously(plugin);
+    }
+
+    public void saveSync(){
+        try {
+            config.save(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

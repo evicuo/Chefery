@@ -9,9 +9,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Recipe {
+
     String name;
     String id;
-    Map<Ingredient, Integer> requiredIngredients = new HashMap<Ingredient, Integer>();
+    Map<Ingredient, Integer> requiredIngredients;
     DishBase dishBase;
 
     public Recipe(String name, String id, Map<Ingredient, Integer> requiredIngredients) {
@@ -23,5 +24,14 @@ public class Recipe {
 
     public String getId() {
         return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public Map<Ingredient, Integer> getRequiredIngredients() {
+        return requiredIngredients;
+    }
+    public DishBase getDishBase() {
+        return dishBase;
     }
 }

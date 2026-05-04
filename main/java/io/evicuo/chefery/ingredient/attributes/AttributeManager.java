@@ -12,11 +12,11 @@ public class AttributeManager {
     private final Chefery plugin;
     Map<String, Attribute> attributes = new HashMap<>();
 
-    private ConfigurationSection attributesSection;
+    private final ConfigurationSection attributesSection;
 
     public AttributeManager(Chefery plugin) {
         this.plugin = plugin;
-        attributesSection= plugin.attributesConfig.get().getConfigurationSection("attributes");
+        attributesSection = plugin.attributesConfig.get().getConfigurationSection("attributes");
         loadAttributes();
     }
     public void loadAttributes() {
@@ -53,7 +53,7 @@ public class AttributeManager {
                 effects.add(new AttributeEffectsObject(attributeEffect, level, duration));
             }
 
-            attributes.put(attrKey, new Attribute(effects, attrKey));
+            attributes.put(attrKey, new Attribute(effects, attrKey.toUpperCase()));
         }
     }
 

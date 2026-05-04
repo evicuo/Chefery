@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class RecipeManager {
 
-    public static List<Recipe> recipes = new ArrayList<>();
+    public List<Recipe> recipes = new ArrayList<>();
     private final Chefery plugin;
 
     public RecipeManager(Chefery plugin) {
@@ -22,7 +22,6 @@ public class RecipeManager {
 
     public void loadRecipes() {
         for(String key : Chefery.getInstance().recipeConfig.get().getKeys(false)){ // for each recipe that exists
-            String id = key;
             ConfigurationSection section = Chefery.getInstance().recipeConfig.get().getConfigurationSection(key);
             String displayName = section.getString("name");
 
@@ -45,7 +44,7 @@ public class RecipeManager {
                 }
             }
 
-            Recipe recipe = new Recipe(id, displayName, recipeIngredients);
+            Recipe recipe = new Recipe(displayName, key, recipeIngredients);
             recipes.add(recipe);
 
 

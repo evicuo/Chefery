@@ -5,7 +5,7 @@ import io.evicuo.chefery.util.CustomConfig;
 
 public class AttributesConfig extends CustomConfig{
 
-    public AttributesConfig() {
-        super(Chefery.getInstance(), "attributes.yml");
+    public AttributesConfig(Chefery plugin) {
+        super(plugin, "attributes.yml");
     }
 }

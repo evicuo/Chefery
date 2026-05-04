@@ -26,13 +26,18 @@ public final class Chefery extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        plugin = this;
+
         recipeConfig = new RecipeConfig(plugin);
         ingredientsConfig = new IngredientsConfig(plugin);
-        attributesConfig = new AttributesConfig();
+        attributesConfig = new AttributesConfig(plugin);
 
+
+        // ORDER MATTERS HERE - DO NOT CHANGE
+        attributeManager = new AttributeManager(plugin);
         ingredientManager = new IngredientManager(plugin);
         recipeManager = new RecipeManager(plugin);
-        attributeManager = new AttributeManager();
 
 
     }

@@ -4,5 +4,4 @@ public enum AttributeEffectsEnum {
         SATURATION,
         HEALTH_BOOST,
         FIRE_RESISTANCE
-
 }

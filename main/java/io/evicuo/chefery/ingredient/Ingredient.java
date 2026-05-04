@@ -43,4 +43,8 @@ public class Ingredient {
     public List<Attribute> getAttributes() {
         return attributes;
     }
+
+    public String getMaterialName() {
+        return materialName;
+    }
 }

@@ -1,5 +1,6 @@
 package io.evicuo.chefery.recipe;
 
+import io.evicuo.chefery.Chefery;
 import io.evicuo.chefery.dish.DishBase;
 import io.evicuo.chefery.ingredient.Ingredient;
 
@@ -10,14 +11,15 @@ import java.util.Map;
 import java.util.Optional;
 
 public class RecipeMatcher {
-    List<Recipe> recipes = RecipeManager.recipes;
+
+    Chefery plugin = Chefery.getInstance();
+    List<Recipe> recipes = plugin.recipeManager.getRecipes();
     DishBase dishBase;
 
     public Optional<DishBase> getDishBase(Map<Ingredient, Integer> inputIngredients) {
-
         for (Recipe recipe : recipes) {
 
-            Map<Ingredient, Integer> requiredIngredients = recipe.requiredIngredients;
+            Map<Ingredient, Integer> requiredIngredients = recipe.getRequiredIngredients();
 
             boolean foundMatch = true; // local, reset per recipe
 
@@ -36,7 +38,7 @@ public class RecipeMatcher {
 
 
             if (foundMatch) {
-                return Optional.of(recipe.dishBase);
+                Optional.ofNullable(recipe.dishBase);
             }
         }
 
