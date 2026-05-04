@@ -1,0 +1,4 @@
+name: Chefery
+version: '1.0'
+main: io.evicuo.chefery.Chefery
+api-version: '1.21'

@@ -1,0 +1,8 @@
+recipes:
+  chicken_stew:
+    display_name: Chicken Stew
+    ingredients:
+      - 'chicken'
+      - 'chicken_stock'
+      - 'carrot'
+      -

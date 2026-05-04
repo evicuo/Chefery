@@ -1,0 +1,10 @@
+ingredients:
+  chicken_stock:
+    material: 'WATER_BOTTLE'
+    category: 'STOCK'
+    display_name: 'Chicken Stock'
+    display_lore:
+      - 'A flavorful liquid made by simmering chicken bones, vegetables, and herbs.'
+      - 'Used as a base for soups, stews, and sauces.'
+    attributes:
+      - 'SPICY'

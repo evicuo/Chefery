@@ -1,0 +1,9 @@
+attributes:
+  spicy:
+    effects:
+      - type: "FIRE_RESISTANCE"
+        base_level: 1
+        duration: 10
+      - type: "SATURATION"
+        base_level: 5
+        duration: 10
