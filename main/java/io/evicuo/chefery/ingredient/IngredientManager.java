@@ -16,8 +16,8 @@ public class IngredientManager {
 
     public IngredientManager(Chefery plugin) {
         this.plugin = plugin;
-        loadIngredients();
         ingredients = new ArrayList<>();
+        loadIngredients();
     }
 
     public void loadIngredients() {
@@ -35,6 +35,9 @@ public class IngredientManager {
             Ingredient ingredient = new Ingredient(key, name, lore, category, attributes, materialName);
             ingredients.add(ingredient);
         }
+
+        // DEBUG //
+        plugin.getLogger().info("Loaded ingredients: " + ingredients.size());
 
     }
 

@@ -1,5 +1,6 @@
 package io.evicuo.chefery;
 
+import io.evicuo.chefery.commands.GiveIngredientCommand;
 import io.evicuo.chefery.configs.AttributesConfig;
 import io.evicuo.chefery.configs.IngredientsConfig;
 import io.evicuo.chefery.configs.RecipeConfig;
@@ -26,6 +27,7 @@ public final class Chefery extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getServer().getPluginCommand("giveingredient").setExecutor(new GiveIngredientCommand(this));
 
         plugin = this;
 

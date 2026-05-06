@@ -42,23 +42,13 @@ public abstract class CustomConfig {
     }
 
     public void save() {
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                try {
-                    config.save(file);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }.runTaskAsynchronously(plugin);
-    }
-
-    public void saveSync(){
-        try {
+        try{
             config.save(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
+
 }

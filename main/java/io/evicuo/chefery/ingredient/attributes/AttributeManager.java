@@ -53,8 +53,11 @@ public class AttributeManager {
                 effects.add(new AttributeEffectsObject(attributeEffect, level, duration));
             }
 
-            attributes.put(attrKey, new Attribute(effects, attrKey.toUpperCase()));
+            attributes.put(attrKey, new Attribute(plugin, effects, attrKey.toUpperCase()));
         }
+
+        // ** DEBUG ** //
+        plugin.getLogger().info("Loaded attributes: " + attributes.size());
     }
 
 

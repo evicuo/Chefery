@@ -50,6 +50,9 @@ public class RecipeManager {
 
 
         }
+
+        // DEBUG //
+        plugin.getLogger().info("Loaded recipes: " + recipes.size());
     }
 
     public Recipe getRecipeById(String id) {
